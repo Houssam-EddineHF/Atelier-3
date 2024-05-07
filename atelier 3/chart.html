@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Dashboard</title>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- External JavaScript -->
+  <script src="chart.js" defer></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.chart {
+  width: 45%;
+}
+
+.productList table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.productList th, .productList td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.productList th {
+  background-color: #f2f2f2;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tableau de bord des produits</h1>
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="Rechercher par nom...">
+      <select id="categoryFilter">
+        <option value="">Toutes les catégories</option>
+      </select>
+      <button onclick="filterProducts()">Filtrer</button>
+    </div>
+    <div class="dashboard">
+      <div class="chart">
+        <h2>Prix total des produits</h2>
+        <canvas id="totalPriceChart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Produits en faible stock</h2>
+        <canvas id="lowStockChart"></canvas>
+      </div>
+    </div>
+    <div class="productList">
+      <h2>Liste des produits</h2>
+      <table id="productTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable('name')">Nom</th>
+            <th onclick="sortTable('price')">Prix</th>
+            <th onclick="sortTable('category')">Catégorie</th>
+            <th onclick="sortTable('stock')">Stock</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

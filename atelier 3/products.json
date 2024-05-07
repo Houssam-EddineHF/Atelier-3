@@ -1,0 +1,7 @@
+[
+    { "name": "Ordinateur portable", "price": 999, "category": "Électronique", "stock": 10 },
+    { "name": "Téléphone", "price": 699, "category": "Électronique", "stock": 8 },
+    { "name": "T-shirt", "price": 20, "category": "Vêtements", "stock": 20 },
+    { "name": "Pantalon", "price": 50, "category": "Vêtements", "stock": 15 },
+    { "name": "Livre", "price": 10, "category": "Livres", "stock": 30 }
+  ]
